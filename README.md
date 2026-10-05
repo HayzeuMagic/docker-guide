@@ -1,34 +1,37 @@
 # docker-guide
 
-PART A
+## PART A
 
 # A1
 
+ssudo rm -f /etc/apt/sources.list.d/docker.lis
+
 sudo apt update
+
 sudo apt install -y ca-certificates curl
+
 sudo install -m 0755 -d /etc/apt/keyrings
+
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-head -1 /etc/apt/keyrings/docker.asc # must print BEGIN PGP PUBLIC KEY BLOCK
+
+head -1 /etc/apt/keyrings/docker.asc
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
-
-# A2
 sudo apt update
 
-sudo apt install -y docker-ce docker-ce-cli containerd.io \
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-docker-buildx-plugin docker-compose-plugin
-
-# A3
+# A2
 sudo usermod -aG docker $USER
 
 sudo -iu $USER # fresh login shell with new group (or log out/in)
 
 docker run hello-world
 
-PART D
+## PART D 
 
 # D1
 mkdir -p ~/zabbix && cd ~/zabbix
