@@ -4,7 +4,7 @@
 
 # A1
 
-ssudo rm -f /etc/apt/sources.list.d/docker.lis
+sudo rm -f /etc/apt/sources.list.d/docker.lis
 
 sudo apt update
 
