@@ -1,8 +1,7 @@
 # docker-guide
 
 ## PART A
-
-# A1
+!! COPY PASTE (LINES 6-30) !!
 
 sudo rm -f /etc/apt/sources.list.d/docker.lis
 
@@ -24,7 +23,6 @@ sudo apt update
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# A2
 sudo usermod -aG docker $USER
 
 sudo -iu $USER # fresh login shell with new group (or log out/in)
@@ -34,6 +32,8 @@ docker run hello-world
 ## PART D 
 
 # D1
+!! COPY PASTE (LINES 37-86) !!
+
 mkdir -p ~/zabbix && cd ~/zabbix
 
 cat > docker-compose.yml <<'EOF'
@@ -86,6 +86,8 @@ EOF
 docker compose config --quiet && echo "OK: docker-compose.yml is valid"
 
 # D2
+!! COPY PASTE (LINES 91-93) !!
+
 docker compose up -d
 docker compose ps # all 4 Up, web (healthy)
 docker compose logs zabbix-server | grep -iE "schema|started|error|cannot" | tail -20
